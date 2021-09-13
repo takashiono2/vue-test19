@@ -13,9 +13,14 @@
     },
     methods: {
       async login(){
+        const provider = new this.$fb.auth.GoogleAuthProvider()
+        await this.$fb.auth().signInWithPopup(provider)
         this.$router.push("/")
       }
-    }
+    },
+    async mounted() {
+     await this.$store.dispatch("chat/getMessages")
+    },
   }
 </script>
 

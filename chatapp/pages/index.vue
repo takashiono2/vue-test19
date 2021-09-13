@@ -5,7 +5,7 @@
     </router-link>
     <br><br>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item" v-for="message in messages" :key="message">
+      <li class="list-group-item" v-for="message in messages" :key="message.id">
         <div>
           {{ message.name }}
         </div>
@@ -20,20 +20,20 @@
 <script>
   export default {
     data() {
-      return {
-        messages: [
-          {
-            name: "tanaka",
-            message: "hello world!"
-          },
-          {
-            name: "yamada",
-            message: "hello world"
-          }
-        ]
+      return {}
+    },
+    computed:{
+      messages(){
+        return this.$store.state.chat.messages
       }
     },
     async mounted(){
+    },
+    methods: {
+      async submit() {
+        this.$store.commit("chat/ADD_MESSAGE",this.form)
+        this.$router.push("/")
+      }
     }
   }
 </script>

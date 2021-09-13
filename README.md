@@ -1,1 +1,0 @@
-## Nuxt.js & Firebase で作成するチャットアプリ

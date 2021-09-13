@@ -10,6 +10,9 @@
       </div>
       <button @click.prevent="submit" type="submit" class="btn btn-primary">投稿</button>
     </form>
+    <div>
+      <a @click="logout">ユーザの切り替え</a>
+    </div>
   </div>
 </template>
 
@@ -18,17 +21,31 @@
     data() {
       return {
         form: {
-          name: "some user",
+          name: null,
           message: "",
         },
       }
     },
+    mounted() {
+      this.$fb.auth().onAuthStateChanged((user) => {
+        if(user){
+          this.form.name = user.displayName
+        }
+      })
+    },
     methods: {
-      async submit() {
+      async submit() { 
+        await this.$fb.firestore().collection("messages").add(this.form)
+        this.$router.push("/")
+      },
+      async logout() {
+        await this.$fb.auth().signOut()
+        this.$router.push("/login")
       }
     }
   }
 </script>
 
 <style>
+
 </style>

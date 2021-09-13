@@ -1,0 +1,20 @@
+[
+  {
+    "name": "form",
+    "path": "/form",
+    "component": "/Users/takashiono/Desktop/MyAppVue7/pages/form.vue",
+    "chunkName": "pages/form"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "/Users/takashiono/Desktop/MyAppVue7/pages/login.vue",
+    "chunkName": "pages/login"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/takashiono/Desktop/MyAppVue7/pages/index.vue",
+    "chunkName": "pages/index"
+  }
+]

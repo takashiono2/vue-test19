@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'MyAppVue7',
+    title: 'chatapp',
     htmlAttrs: {
       lang: 'en'
     },
@@ -23,6 +23,9 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    // { src: "~/Desktop/MyAppVue7/chatapp/plugins/firebase.js", ssr: false }
+    { src: "~/plugins/firebase.js", ssr: false }
+    // { src: "chatapp/plugins/firebase.js", ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
